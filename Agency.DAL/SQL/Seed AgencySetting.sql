@@ -1,0 +1,1 @@
+﻿INSERT INTO dbo.AgencySettings VALUES (10)

@@ -1,4 +1,6 @@
-﻿public class Appointment
+﻿using System;
+
+public class Appointment
 {
     public int AppointmentId { get; set; }
     public string CustomerName { get; set; }

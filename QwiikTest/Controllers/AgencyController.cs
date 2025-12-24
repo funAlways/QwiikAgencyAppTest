@@ -1,19 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using QwiikMVC.Models;
 using System.Data.Entity;
 
 public class AgencyController : Controller
 {
     AppDbContext db = new AppDbContext();
 
-    public ActionResult TodayQueue()
+    public ActionResult DayView(DateTime? date)
     {
-        var today = DateTime.Today;
+        DateTime target = date ?? DateTime.Today;
+
         var list = db.Appointments
-            .Where(a => DbFunctions.TruncateTime(a.AppointmentDate) == today && a.Status == "Pending")
+            .Where(a => DbFunctions.TruncateTime(a.AppointmentDate) == target)
             .OrderBy(a => a.TokenNumber)
             .ToList();
 
+        ViewBag.SelectedDate = target;
         return View(list);
     }
 

@@ -1,11 +1,17 @@
 ﻿@model List<Appointment>
+@{
+    var selected = ((DateTime)ViewBag.SelectedDate).ToString("yyyy-MM-dd");
+}
+
+<form method="get">
+    <input type="date" name="date" value="@selected" onchange="this.form.submit()" />
+</form>
 
 <table border="1">
     <tr>
         <th>Token</th>
         <th>Name</th>
-        <th>Phone</th>
-        <th>Action</th>
+        <th>Status</th>
     </tr>
 
     @foreach (var a in Model)
@@ -13,10 +19,7 @@
         <tr>
             <td>@a.TokenNumber</td>
             <td>@a.CustomerName</td>
-            <td>@a.Phone</td>
-            <td>
-                <a href="/Agency/Complete/@a.AppointmentId">Complete</a>
-            </td>
+            <td>@a.Status</td>
         </tr>
     }
 </table>

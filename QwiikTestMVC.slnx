@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="WebApplication1/QwiikMVC.csproj" />
+  <Project Path="Agency.BL/Agency.BL.csproj" Id="6ac97a88-6997-4579-86f6-1b26b2378095" />
+  <Project Path="Agency.DAL/Agency.DAL.csproj" Id="6aaf649e-5854-445b-98a5-4239e4373b23" />
+  <Project Path="QwiikTest/Agency.Web.csproj" />
 </Solution>
