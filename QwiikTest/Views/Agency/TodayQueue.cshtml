@@ -1,0 +1,22 @@
+﻿@model List<Appointment>
+
+<table border="1">
+    <tr>
+        <th>Token</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>@a.TokenNumber</td>
+            <td>@a.CustomerName</td>
+            <td>@a.Phone</td>
+            <td>
+                <a href="/Agency/Complete/@a.AppointmentId">Complete</a>
+            </td>
+        </tr>
+    }
+</table>
