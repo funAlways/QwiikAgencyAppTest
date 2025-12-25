@@ -25,4 +25,17 @@ public class AgencyController : Controller
         db.SaveChanges();
         return RedirectToAction("TodayQueue");
     }
+    public ActionResult ViewHolidays()
+    {
+        return View(db.PublicHolidays.ToList());
+    }
+
+    [HttpPost]
+    public ActionResult AddHoliday(PublicHoliday h)
+    {
+        db.PublicHolidays.Add(h);
+        db.SaveChanges();
+        return RedirectToAction("ViewHolidays");
+    }
+
 }

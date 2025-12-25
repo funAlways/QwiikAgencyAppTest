@@ -51,9 +51,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgencySetting.cs" />
+    <Compile Include="Migrations\202512250736099_AddPublicHoliday.cs" />
+    <Compile Include="Migrations\202512250736099_AddPublicHoliday.Designer.cs">
+      <DependentUpon>202512250736099_AddPublicHoliday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AgencySetting.cs" />
     <Compile Include="AppDbContext.cs" />
-    <Compile Include="Appointment.cs" />
+    <Compile Include="Models\Appointment.cs" />
     <Compile Include="Migrations\202512240807395_Init.cs" />
     <Compile Include="Migrations\202512240807395_Init.Designer.cs">
       <DependentUpon>202512240807395_Init.cs</DependentUpon>
@@ -63,6 +67,7 @@
       <DependentUpon>202512240825353_AddAgencySetting.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\PublicHoliday.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AppointmentRepository.cs" />
     <Compile Include="Repositories\IAppointmentRepository.cs" />
@@ -77,6 +82,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202512240825353_AddAgencySetting.resx">
       <DependentUpon>202512240825353_AddAgencySetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202512250736099_AddPublicHoliday.resx">
+      <DependentUpon>202512250736099_AddPublicHoliday.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

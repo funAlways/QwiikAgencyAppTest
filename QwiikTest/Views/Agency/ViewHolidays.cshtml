@@ -1,0 +1,18 @@
+﻿@model List<PublicHoliday>
+
+<form method="post" action="/Agency/AddHoliday">
+    Date: <input type="date" name="HolidayDate" required />
+    Reason: <input name="Reason" required />
+    <button>Add Holiday</button>
+</form>
+
+<table border="1">
+    <tr><th>Date</th><th>Reason</th></tr>
+    @foreach (var h in Model)
+    {
+        <tr>
+            <td>@h.HolidayDate.ToShortDateString()</td>
+            <td>@h.Reason</td>
+        </tr>
+    }
+</table>
